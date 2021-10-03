@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: #27989c;
+  height: 8vh;
+}
+
+
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+
+
+
+/*Inicio do Responsivo*/
+.mobile-menu { /*para esconder os traços enquanto não estiver na resolução querida*/
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu div {
+  width: 32px; /*largura do traço*/
+  height: 2px; /*altura do traço*/
+  background: #fff; /*cor do traço*/
+  margin: 8px; /*espaço entre cada traço*/
+  transition: 0.6s; /*tempo para fazer o efeito quando é clicado*/
+}
+
+@media (max-width: 999px) {
+  body {
+    overflow-x: hidden; /*para esconder o bloco*/
+  }
+  .nav-list { /*o nav-list já está com o "display: flex" faz o menu ficar horizontal*/
+    border: 1px solid rebeccapurple; /*para entender melhor*/
+    position: absolute;
+    top: 8vh; /*para ficar a baixo do header*/
+    right: 0; /*para ele ficar colado no lado direito sem aparecer*/
+    width: 50vw; /*largura do menu responsivo*/
+    height: 92vh; /*altura do menu responsivo*/
+    background: #27989c; /*cor de fundo*/
+    flex-direction: column; /*faz ficar um embaixo do outro, como já está como o display: flex;*/
+    align-items: center; /*centraliza o menu*/
+    justify-content: space-around; /*espalha os links para os espaços disponiveis*/
+    transform: translateX(100%); /*o bloco vai para fora do site (para arrumar ultilizou o "overflow-x: hidden" no body)*/
+    transition: transform 0.3s ease-in; /*o tempo para o bloco aparecer e depois a forma, que seria suave*/
+  }
+  .nav-list li {
+    margin-left: 0; /*para ficar corretamente ao centro*/
+    opacity: 0; /*a tela fica sem os links, para depois fazer a animação deles aparecendo*/
+  }
+  .mobile-menu {
+    display: block; /*para se ajustar*/
+  }
+}
+
+.nav-list.ativo {
+  transform: translateX(0); /*quando o nav-list estiver ativa o bloco volta a aparecer(ultilizando o java script)*/
+}
+
+@keyframes navLinkFade { /*o tempo da animação está no java script*/
+  from {
+    opacity: 0; /*faz o efeito que demora um pouco para aparecer os links*/
+    transform: translateX(50px); /*faz o efeito dos links indo da direita para a esquerda*/
+  }
+  to {
+    opacity: 1; /**/
+    transform: translateX(0px); 
+  }
+}
+
+.mobile-menu.ativo .line1 {/*efeito dos traços quando for clicado*/
+  transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.ativo .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.ativo .line3 {
+  transform: rotate(45deg) translate(-5px, -7px);
+}
