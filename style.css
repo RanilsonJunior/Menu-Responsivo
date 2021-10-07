@@ -64,14 +64,14 @@ nav {
     border: 1px solid rebeccapurple; /*para entender melhor*/
     position: absolute;
     top: 8vh; /*para ficar a baixo do header*/
-    right: 0; /*para ele ficar colado no lado direito sem aparecer*/
+    right: 0; /*para ele ficar colado no lado direito sem aparecer*/ /*Caso querira que o bloco venha do LADO DIREITO colocar "left: 0";*/
     width: 50vw; /*largura do menu responsivo*/
     height: 92vh; /*altura do menu responsivo*/
     background: #27989c; /*cor de fundo*/
     flex-direction: column; /*faz ficar um embaixo do outro, como já está como o display: flex;*/
     align-items: center; /*centraliza o menu*/
     justify-content: space-around; /*espalha os links para os espaços disponiveis*/
-    transform: translateX(100%); /*o bloco vai para fora do site (para arrumar ultilizou o "overflow-x: hidden" no body)*/
+    transform: translateX(100%); /*o bloco vai para fora do site (para arrumar ultilizou o "overflow-x: hidden" no body)*/ /*Caso queira que o bloco venha do LADO DIREITO colocar "transform: translateX(-100%);"*/
     transition: transform 0.3s ease-in; /*o tempo para o bloco aparecer e depois a forma, que seria suave*/
   }
   .nav-list li {
@@ -79,7 +79,7 @@ nav {
     opacity: 0; /*a tela fica sem os links, para depois fazer a animação deles aparecendo*/
   }
   .mobile-menu {
-    display: block; /*para se ajustar*/
+    display: block; /*para se ajustar, os traços vão aparecer*/
   }
 }
 
