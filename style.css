@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+body {
+  overflow-x: hidden; /*colocando isso o menu não sai para fora da tela no mobile*/
+}
 
 a {
   color: #fff;
@@ -58,21 +61,20 @@ nav {
 
 @media (max-width: 999px) {
   body {
-    overflow-x: hidden; /*para esconder o bloco*/
+    overflow-x: hidden; /*para esconder o menu*/
   }
   .nav-list { /*o nav-list já está com o "display: flex" faz o menu ficar horizontal*/
-    border: 1px solid rebeccapurple; /*para entender melhor*/
     position: absolute;
     top: 8vh; /*para ficar a baixo do header*/
-    right: 0; /*para ele ficar colado no lado direito sem aparecer*/ /*Caso querira que o bloco venha do LADO ESQUERDO colocar "left: 0";*/
+    right: 0; /*para ele ficar colado no lado direito sem aparecer*/ /*Caso querira que o menu venha do LADO ESQUERDO colocar "left: 0";*/
     width: 50vw; /*largura do menu responsivo*/
     height: 92vh; /*altura do menu responsivo*/
     background: #27989c; /*cor de fundo*/
     flex-direction: column; /*faz ficar um embaixo do outro, como já está como o display: flex;*/
     align-items: center; /*centraliza o menu*/
     justify-content: space-around; /*espalha os links para os espaços disponiveis*/
-    transform: translateX(100%); /*o bloco vai para fora do site (para arrumar ultilizou o "overflow-x: hidden" no body)*/ /*Caso queira que o bloco venha do LADO ESQUERDO colocar "transform: translateX(-100%);"*/
-    transition: transform 0.3s ease-in; /*o tempo para o bloco aparecer e depois a forma, que seria suave*/
+    transform: translateX(100%); /*o menu vai para fora do site (para arrumar ultilizou o "overflow-x: hidden" no body)*/ /*Caso queira que o menu venha do LADO ESQUERDO colocar "transform: translateX(-100%);"*/
+    transition: transform 0.3s ease-in; /*o tempo para o menu aparecer e depois a forma, que seria suave*/
   }
   .nav-list li {
     margin-left: 0; /*para ficar corretamente ao centro*/
@@ -84,7 +86,7 @@ nav {
 }
 
 .nav-list.ativo {
-  transform: translateX(0); /*quando o nav-list estiver ativa o bloco volta a aparecer(ultilizando o java script)*/
+  transform: translateX(0); /*quando o nav-list estiver ativa o menu volta a aparecer(ultilizando o java script)*/
 }
 
 @keyframes navLinkFade { /*o tempo da animação está no java script*/
@@ -105,8 +107,6 @@ nav {
 
 .mobile-menu.ativo .line2 {
   /*transform: translateY(-50px);*/ /*forma 2*/
-  background: transparent;
-  box-shadow: none;
   opacity: 0;
 }
 
