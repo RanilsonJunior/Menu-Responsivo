@@ -108,6 +108,7 @@ nav {
 .mobile-menu.ativo .line2 {
   /*transform: translateY(-50px);*/ /*forma 2*/
   opacity: 0;
+  /*transform: rotate(-45deg) translate( -2px, 0px);*/ /*forma 3, tem que estar 'opacity 1'*/
 }
 
 .mobile-menu.ativo .line3 {
