@@ -2,12 +2,18 @@
   margin: 0;
   padding: 0;
 }
+
+:root {
+  --cinza: #4f504e;
+  --branco: #fff;
+}
+
 body {
   overflow-x: hidden; /*colocando isso o menu não sai para fora da tela no mobile*/
 }
 
 a {
-  color: #fff;
+  color: var(--branco);
   text-decoration: none;
   transition: 0.3s;
 }
@@ -27,11 +33,9 @@ nav {
   justify-content: space-around;
   align-items: center;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  background: #27989c;
+  background: var(--cinza);
   height: 8vh;
 }
-
-
 
 .nav-list {
   list-style: none;
@@ -45,7 +49,7 @@ nav {
 
 
 
-/*Inicio do Responsivo*/
+/*===============Inicio do Responsivo============*/
 .mobile-menu { /*para esconder os traços enquanto não estiver na resolução querida*/
   display: none;
   cursor: pointer;
@@ -69,7 +73,7 @@ nav {
     right: 0; /*para ele ficar colado no lado direito sem aparecer*/ /*Caso querira que o menu venha do LADO ESQUERDO colocar "left: 0";*/
     width: 50vw; /*largura do menu responsivo*/
     height: 92vh; /*altura do menu responsivo*/
-    background: #27989c; /*cor de fundo*/
+    background: var(--cinza); /*cor de fundo*/
     flex-direction: column; /*faz ficar um embaixo do outro, como já está como o display: flex;*/
     align-items: center; /*centraliza o menu*/
     justify-content: space-around; /*espalha os links para os espaços disponiveis*/
